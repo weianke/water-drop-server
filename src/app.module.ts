@@ -12,6 +12,10 @@ import { AppService } from './app.service';
       username: 'root',
       password: 'blackstone',
       database: 'drop',
+      entities: [`${__dirname}/../modules/**/*.entity{.ts,.js}`],
+      logging: true,
+      synchronize: true,
+      autoLoadEntities: true
     }),
   ],
   controllers: [AppController],
