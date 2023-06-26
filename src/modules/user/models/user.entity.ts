@@ -1,8 +1,14 @@
-import { Column, Entity } from 'typeorm';
 import { IsNotEmpty } from 'class-validator';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+/**
+ * 组件
+ */
 @Entity('user')
 export class User {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
   @Column({
     comment: '昵称',
     default: '',
@@ -11,7 +17,7 @@ export class User {
   name: string;
 
   @Column({
-    comment: '描述信息',
+    comment: '描述',
     default: '',
   })
   desc: string;
@@ -23,14 +29,20 @@ export class User {
   tel: string;
 
   @Column({
-    comment: '密码',
+    comment: '头像',
     nullable: true,
   })
-  password: string;
+  avatar: string;
 
   @Column({
-    comment: '描述信息',
-    default: '',
+    comment: '验证码',
+    nullable: true,
   })
-  account: string;
+  code: string;
+
+  @Column({
+    comment: '验证码生成时间',
+    nullable: true,
+  })
+  codeCreateTimeAt: Date;
 }
