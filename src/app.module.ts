@@ -11,7 +11,7 @@ import { UserModule } from './modules/user/user.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'blackstone',
+      password: '00000000',
       database: 'water-drop',
       entities: [`${__dirname}/../modules/**/*.entity{.ts,.js}`],
       logging: true,
